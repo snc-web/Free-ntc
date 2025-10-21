@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>60GB Giveaway — Promotional Signup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>60GB Data Giveaway</h1>
+        <p class="tag">Limited-time promotional offer — Independent campaign</p>
+      </div>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#claim">Claim</a>
+        <a href="#terms">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- Replace tihar_banner.jpg with your uploaded banner image -->
+      <img id="topBanner" src="tihar_banner.jpg" alt="Promotional banner" class="hero-img" />
+      <div class="hero-card container">
+        <h2 class="hero-title">Celebrate with a chance to get <span>60GB</span> of data</h2>
+        <p class="hero-sub">Join our giveaway. Enter your mobile number and message us — we'll respond on WhatsApp.</p>
+
+        <form id="claimForm" class="claim-form" onsubmit="return handleSubmit(event)" novalidate>
+          <label for="phone" class="label">Your mobile number</label>
+          <div class="input-row">
+            <input id="phone" name="phone" type="tel" inputmode="numeric"
+                   placeholder="98XXXXXXXX" maxlength="10" required />
+            <button type="submit" class="btn primary">Contact via WhatsApp</button>
+          </div>
+          <p id="formMsg" class="form-msg" aria-live="polite"></p>
+
+          <div class="trust">
+            <small class="muted">Note: This giveaway page is run independently. This site is not affiliated with or endorsed by any telecom operator unless explicitly stated. Participation requires messaging our support on WhatsApp.</small>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="how" class="container how-it-works">
+      <h3>How it works</h3>
+      <ol>
+        <li>Enter your mobile number and click the WhatsApp button.</li>
+        <li>You'll be redirected to WhatsApp with a prefilled message to our support number.</li>
+        <li>We will verify and reply with next steps. Verification may require identity confirmation.</li>
+      </ol>
+    </section>
+
+    <section id="claim" class="container extras">
+      <div class="card small">
+        <h4>Important</h4>
+        <p class="muted">Only legitimate winners will be contacted. Avoid sharing sensitive passwords or OTPs with anyone.</p>
+      </div>
+
+      <div class="card small">
+        <h4>Contact</h4>
+        <p>WhatsApp: <a href="https://wa.me/9779766666187" target="_blank" rel="noopener">+977 9766666187</a></p>
+      </div>
+    </section>
+
+    <section id="terms" class="container terms">
+      <h3>Terms & Conditions (summary)</h3>
+      <ul>
+        <li>Participation is voluntary. This page is operated by <em>Your Organization</em>.</li>
+        <li>No telecom provider is represented here. Service distribution is subject to verification.</li>
+        <li>Winners will be selected and notified by WhatsApp.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted">© <span id="year"></span> Promotional Campaign. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Helper: sanitize phone digits
+    function cleanNumber(raw) {
+      return (raw || '').replace(/[^0-9]/g, '');
+    }
+
+    // Handles form submission: validate and redirect to WhatsApp with prefilled message
+    function handleSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('phone');
+      const msgEl = document.getElementById('formMsg');
+      msgEl.textContent = '';
+      const raw = input.value.trim();
+      const digits = cleanNumber(raw);
+
+      // Basic Nepali mobile validation: 10 digits and starts with 98/97/96/... (adjust if needed)
+      if (!/^(9[6-9]|98|97)\d{8}$/.test(digits)) {
+        msgEl.textContent = 'Please enter a valid 10-digit Nepali mobile number (e.g., 98XXXXXXXX).';
+        msgEl.classList.add('error');
+        input.focus();
+        return false;
+      }
+
+      // Build message and WA link
+      const supportNumber = '9779766666187'; // your WhatsApp number (without +)
+      const userNumberWithCountry = '977' + digits; // assumes user entered local 10-digit number
+      const text = encodeURIComponent(
+        `Hello, I want to claim the 60GB promotion. My mobile number is +${userNumberWithCountry}.`
+      );
+
+      const waUrl = `https://wa.me/${supportNumber}?text=${text}`;
+
+      // small UX: show message then redirect
+      msgEl.textContent = 'Opening WhatsApp...';
+      msgEl.classList.remove('error');
+
+      // redirect
+      window.location.href = waUrl;
+      return false;
+    }
+  </script>
+</body>
+</html>
