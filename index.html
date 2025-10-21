@@ -3,103 +3,197 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FREE NTC/NCELL Data</title>
+<title>AUTHOR DHIRAJ - FREE NTC/NCELL 60GB</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-  body{
-    background:radial-gradient(circle at center,#3a007a,#000 80%);
-    min-height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;
-    color:#fff;overflow:hidden;text-align:center;
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  * {margin:0;padding:0;box-sizing:border-box;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top left, #5a00ff, #19006b, #000428);
+    background-size: 300% 300%;
+    animation: bgGlow 10s ease infinite;
+    color: #fff;
+    overflow: hidden;
   }
 
-  @keyframes glow{
-    0%{text-shadow:0 0 10px #ff0040,0 0 20px #00ffea,0 0 30px #00ffea;}
-    50%{text-shadow:0 0 25px #ff00ff,0 0 45px #00ffea,0 0 60px #00ff40;}
-    100%{text-shadow:0 0 15px #00ffea,0 0 25px #ff0040,0 0 40px #00ffea;}
+  @keyframes bgGlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
   }
 
-  .glass-box{
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:2rem;width:90%;max-width:400px;
-    box-shadow:0 0 25px rgba(255,255,255,0.15);
-    animation:fadeIn 1.2s ease-in-out;
+  .glass-card {
+    width: 90%;
+    max-width: 420px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  @keyframes fadeIn{from{opacity:0;transform:scale(0.95);}to{opacity:1;transform:scale(1);}}
-
-  h1{font-size:2.3rem;letter-spacing:1px;font-weight:700;margin-bottom:.8rem;animation:glow 2s infinite alternate;}
-  h2{font-size:1.9rem;font-weight:600;margin-bottom:.5rem;animation:glow 2s infinite alternate-reverse;}
-  p{color:#ddd;margin-bottom:1.5rem;font-size:1rem;}
-
-  input[type="tel"]{
-    width:100%;padding:12px;border:none;border-radius:10px;background:rgba(255,255,255,0.2);
-    color:#fff;text-align:center;font-size:1rem;outline:none;margin-bottom:1rem;
+  /* Glowing AUTHOR DHIRAJ */
+  .author {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #00ffcc, #ff0099, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowAuthor 4s ease-in-out infinite;
+    margin-bottom: 1rem;
   }
 
-  input::placeholder{color:#bbb;}
-
-  button{
-    width:100%;padding:12px;border:none;border-radius:10px;font-size:1.1rem;
-    color:#fff;background:linear-gradient(90deg,#ff0040,#00ffea,#00ff40);
-    cursor:pointer;animation:glow 1.5s infinite alternate;transition:transform .25s ease;
+  @keyframes glowAuthor {
+    0%,100% { text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffff; }
+    50% { text-shadow: 0 0 15px #ff0099, 0 0 25px #ff00cc; }
   }
 
-  button:hover{transform:scale(1.05);}
-  footer{margin-top:1rem;font-size:.8rem;color:#bbb;}
-
-  .share-btn{
-    position:fixed;right:20px;bottom:25px;background:linear-gradient(135deg,#ff00cc,#3333ff);
-    border:none;border-radius:50%;width:60px;height:60px;font-size:28px;color:#fff;
-    box-shadow:0 0 25px rgba(255,255,255,0.4);cursor:pointer;animation:pulse 2s infinite alternate;
+  /* Glowing FREE NTC/NCELL */
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ff0000, #00ffea, #00ff00, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 3s linear infinite;
+    margin-bottom: 0.8rem;
   }
 
-  @keyframes pulse{
-    0%{transform:scale(1);box-shadow:0 0 10px #fff;}
-    100%{transform:scale(1.1);box-shadow:0 0 30px #ff00ff;}
+  @keyframes glowText {
+    0% { text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0077; }
+    25% { text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffea; }
+    50% { text-shadow: 0 0 8px #00ff00, 0 0 15px #00ff99; }
+    75% { text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff00cc; }
+    100% { text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0077; }
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin-bottom: 1.2rem;
+  }
+
+  input::placeholder { color: rgba(255,255,255,0.6); }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ff0000);
+    background-size: 300% 300%;
+    animation: btnGlow 6s linear infinite;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+  }
+
+  @keyframes btnGlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(255,255,255,0.9);
+  }
+
+  footer {
+    margin-top: 1.3rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* Floating glowing dots */
+  .particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: float 6s linear infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
   }
 </style>
 </head>
 <body>
+  <div class="glass-card">
+    <div class="author">AUTHOR DHIRAJ</div>
+    <h1>FREE NTC/NCELL</h1>
+    <h2>60GB Data Gift</h2>
+    <p>Enter your number below to claim your festival offer.</p>
 
-<div class="glass-box">
-  <h1>AUTHOR DHIRAJ</h1>
-  <h2>FREE NTC / NCELL</h2>
-  <p>Claim your 60GB free data offer now!</p>
+    <form id="claimForm">
+      <input type="tel" id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+      <button type="submit">Claim Now</button>
+    </form>
 
-  <form id="claimForm">
-    <input type="tel" id="phone" placeholder="Enter your mobile number" required />
-    <button type="submit">Claim Now</button>
-  </form>
-
-  <footer>Demo site — created by Dhiraj for learning purpose only.</footer>
-</div>
-
-<button class="share-btn" id="shareBtn">🔗</button>
+    <footer>Demo website for design & learning only — not an official telecom offer.</footer>
+  </div>
 
 <script>
-  document.getElementById('claimForm').addEventListener('submit',function(e){
+  document.getElementById('claimForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const num=document.getElementById('phone').value.trim();
-    if(num.length>=9){
-      const msg=encodeURIComponent(`Hello! I want to claim 60GB free data. My number is ${num}`);
-      window.location.href=`https://wa.me/9779766666187?text=${msg}`;
-    }else{
-      alert("Please enter a valid mobile number.");
+    const num = document.getElementById('phone').value.trim();
+    if(num.length >= 9) {
+      const msg = encodeURIComponent(`Hello! I want to claim 60 GB free data. My number is ${num}`);
+      window.location.href = `https://wa.me/9779766666187?text=${msg}`;
+    } else {
+      alert('Please enter a valid mobile number.');
     }
   });
 
-  document.getElementById('shareBtn').addEventListener('click',async()=>{
-    const shareData={
-      title:"Free 60GB NTC/NCELL Offer",
-      text:"Claim your 60GB free data now!",
-      url:window.location.href
-    };
-    try{await navigator.share(shareData);}
-    catch(err){alert("Sharing not supported on this device.");}
-  });
+  // Floating glowing particles
+  const numParticles = 25;
+  for(let i=0; i<numParticles; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.width = p.style.height = Math.random()*8 + 4 + 'px';
+    p.style.left = Math.random()*100 + '%';
+    p.style.top = '100%';
+    p.style.animationDuration = (Math.random()*5 + 4) + 's';
+    p.style.animationDelay = (Math.random()*5) + 's';
+    document.body.appendChild(p);
+  }
 </script>
 </body>
 </html>
