@@ -1,102 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FREE NTC/NCELL Data</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+  * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
   body {
-    background: radial-gradient(circle at top left, #4b0082, #000000 70%);
+    background: radial-gradient(circle at center, #3a007a, #000 80%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: #fff;
     overflow: hidden;
   }
 
-  /* Glow animation */
+  /* Glowing animation */
   @keyframes glow {
-    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 15px #00bfff; }
-    50% { text-shadow: 0 0 25px #ff00ff, 0 0 40px #00ffcc, 0 0 55px #ff0000; }
-    100% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #ff0000, 0 0 30px #00ff00; }
+    0% { text-shadow: 0 0 10px #ff0040, 0 0 20px #00ffea, 0 0 30px #00ffea; }
+    50% { text-shadow: 0 0 25px #ff00ff, 0 0 45px #00ffea, 0 0 60px #00ff40; }
+    100% { text-shadow: 0 0 15px #00ffea, 0 0 25px #ff0040, 0 0 40px #00ffea; }
   }
 
-  .glass {
-    background: rgba(255, 255, 255, 0.1);
+  .glass-box {
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 2rem;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
+    box-shadow: 0 0 25px rgba(255,255,255,0.15);
+    animation: fadeIn 1.2s ease-in-out;
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  h1, h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    animation: glow 2s infinite alternate;
+    from {opacity:0; transform:scale(0.95);}
+    to {opacity:1; transform:scale(1);}
   }
 
   h1 {
     font-size: 2.3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
     color: #fff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    animation: glow 2s infinite alternate;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    font-weight: 600;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    animation: glow 2s infinite alternate-reverse;
+  }
+
+  p {
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
   }
 
   input[type="tel"] {
     width: 100%;
     padding: 12px;
-    font-size: 1rem;
-    border-radius: 10px;
     border: none;
-    outline: none;
-    margin-bottom: 1rem;
-    text-align: center;
+    border-radius: 10px;
     background: rgba(255,255,255,0.2);
     color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 1rem;
   }
 
-  input::placeholder {
-    color: #ddd;
-  }
+  input::placeholder {color:#bbb;}
 
   button {
     width: 100%;
     padding: 12px;
-    font-size: 1.1rem;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(45deg, #ff0000, #00ff00, #00bfff);
+    font-size: 1.1rem;
     color: #fff;
+    background: linear-gradient(90deg, #ff0040, #00ffea, #00ff40);
     cursor: pointer;
-    transition: transform 0.3s ease;
     animation: glow 1.5s infinite alternate;
+    transition: transform 0.25s ease;
   }
 
-  button:hover {
-    transform: scale(1.05);
-  }
+  button:hover {transform: scale(1.05);}
 
   footer {
-    font-size: 0.8rem;
-    color: #ccc;
     margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #bbb;
   }
 
   /* Floating share button */
@@ -109,27 +111,33 @@
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    color: #fff;
     font-size: 28px;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(255,255,255,0.4);
     cursor: pointer;
-    animation: glow 1.8s infinite alternate;
+    animation: pulse 2s infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+    100% { transform: scale(1.1); box-shadow: 0 0 30px #ff00ff; }
   }
 
 </style>
 </head>
 <body>
-  <div class="glass">
+
+  <div class="glass-box">
     <h1>AUTHOR DHIRAJ</h1>
     <h2>FREE NTC / NCELL</h2>
     <p>Claim your 60GB free data offer now!</p>
 
     <form id="claimForm">
-      <input type="tel" id="phone" placeholder="Enter your number" required />
+      <input type="tel" id="phone" placeholder="Enter your mobile number" required>
       <button type="submit">Claim Now</button>
     </form>
 
-    <footer>Demo site — created for learning purpose only.</footer>
+    <footer>Demo site — Created by Dhiraj for learning purpose only.</footer>
   </div>
 
   <button class="share-btn" id="shareBtn">🔗</button>
@@ -139,8 +147,8 @@
   document.getElementById('claimForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const num = document.getElementById('phone').value.trim();
-    if(num.length >= 9){
-      const msg = encodeURIComponent(`Hello! I want to claim free 60GB data for my number: ${num}`);
+    if (num.length >= 9) {
+      const msg = encodeURIComponent(`Hello! I want to claim 60GB free data. My number is ${num}`);
       window.location.href = `https://wa.me/9779766666187?text=${msg}`;
     } else {
       alert("Please enter a valid mobile number.");
@@ -162,93 +170,4 @@
   });
 </script>
 </body>
-</html>    width: 100%;
-    padding: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    background: linear-gradient(90deg, #ff00ff, #00ffff, #00ff00, #ff0000);
-    background-size: 300% 300%;
-    animation: btnGlow 6s linear infinite;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    transition: all 0.3s ease;
-  }
-
-  @keyframes btnGlow {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-
-  button:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 35px rgba(255,255,255,0.9);
-  }
-
-  footer {
-    margin-top: 1.3rem;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.7);
-  }
-
-  /* Floating glowing dots */
-  .particle {
-    position: absolute;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
-    border-radius: 50%;
-    animation: float 6s linear infinite;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-800px); opacity: 0; }
-  }
-</style>
-</head>
-<body>
-  <div class="glass-card">
-    <div class="author">AUTHOR DHIRAJ</div>
-    <h1>FREE NTC/NCELL</h1>
-    <h2>60GB Data Gift</h2>
-    <p>Enter your number below to claim your festival offer.</p>
-
-    <form id="claimForm">
-      <input type="tel" id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
-      <button type="submit">Claim Now</button>
-    </form>
-
-    <footer>Demo website for design & learning only — not an official telecom offer.</footer>
-  </div>
-
-<script>
-  document.getElementById('claimForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const num = document.getElementById('phone').value.trim();
-    if(num.length >= 9) {
-      const msg = encodeURIComponent(`Hello! I want to claim 60 GB free data. My number is ${num}`);
-      window.location.href = `https://wa.me/9779869990242?text=${msg}`;
-    } else {
-      alert('Please enter a valid mobile number.');
-    }
-  });
-
-  // Floating glowing particles
-  const numParticles = 25;
-  for(let i=0; i<numParticles; i++){
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.width = p.style.height = Math.random()*8 + 4 + 'px';
-    p.style.left = Math.random()*100 + '%';
-    p.style.top = '100%';
-    p.style.animationDuration = (Math.random()*5 + 4) + 's';
-    p.style.animationDelay = (Math.random()*5) + 's';
-    document.body.appendChild(p);
-  }
-</script>
-</body>
 </html>
-
-
