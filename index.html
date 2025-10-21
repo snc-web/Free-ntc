@@ -3,110 +3,124 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Happy Tihar – 60 GB Free Data</title>
+<title>FREE NTC/NCELL - 60GB Offer</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #ff6600 0%, #ffcc66 100%);
-    color: #fff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #ff6600, #ffb347, #ffcc66);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+    color: #fff;
   }
-  .container {
-    background: #fff;
-    color: #333;
-    max-width: 420px;
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .glass-card {
     width: 90%;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    overflow: hidden;
+    max-width: 420px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     text-align: center;
+    animation: float 4s ease-in-out infinite;
   }
-  .banner img {
-    width: 100%;
-    display: block;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
   }
-  .content {
-    padding: 1.5rem;
-  }
-  .content h1 {
-    font-size: 1.8rem;
-    color: #ff6600;
-    margin-bottom: 0.5rem;
-  }
-  .content h2 {
+
+  h1 {
     font-size: 2.6rem;
-    color: #d43f00;
-    margin-bottom: 0.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff, #ffe066, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(255,255,255,0.5);
+    margin-bottom: 0.8rem;
   }
-  .content p {
-    color: #555;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
     margin-bottom: 1.5rem;
   }
-  .providers {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 1.5rem;
-  }
-  .providers img {
-    height: 38px;
-    object-fit: contain;
-  }
+
   input[type="tel"] {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px;
     font-size: 1rem;
-    border: 2px solid #ff6600;
     border-radius: 10px;
+    border: none;
     outline: none;
-    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    margin-bottom: 1.2rem;
   }
+  input::placeholder {
+    color: rgba(255,255,255,0.7);
+  }
+
   button {
     width: 100%;
     padding: 12px;
     font-size: 1.1rem;
     border: none;
     border-radius: 10px;
-    background: #ff6600;
+    background: linear-gradient(90deg, #ff7b00, #ffcc00);
     color: #fff;
     cursor: pointer;
-    transition: 0.25s;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
   }
   button:hover {
-    background: #e65c00;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255,255,255,0.7);
   }
+
   footer {
+    margin-top: 1.3rem;
     font-size: 0.8rem;
-    color: #888;
-    margin-top: 1.5rem;
+    color: rgba(255,255,255,0.7);
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="banner">
-      <img src="Screenshot_2025-10-21-17-37-46-839-edit_com.android.chrome.jpg" alt="Happy Tihar 60GB Free Data Banner">
-    </div>
-    <div class="content">
-      <h1>Happy Tihar Offer</h1>
-      <h2>60 GB Free Data</h2>
-      <p>Available for all NTC &amp; Ncell users. Enter your number below to continue.</p>
+  <div class="glass-card">
+    <h1>FREE NTC/NCELL</h1>
+    <h2>Get 60GB Free Data</h2>
+    <p>Enter your mobile number below to claim your data offer instantly.</p>
 
-      <div class="providers">
-        <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Nepal_Telecom_logo.png" alt="NTC Logo">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c1/Ncell_logo.svg" alt="Ncell Logo">
-      </div>
+    <form id="claimForm">
+      <input type="tel" id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+      <button type="submit">Claim Now</button>
+    </form>
 
-      <form id="claimForm">
-        <input type="tel" id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
-        <button type="submit">Claim Now</button>
-      </form>
-
-      <footer>Demo page for learning purpose – not an official offer.</footer>
-    </div>
+    <footer>Demo page for learning purpose – not an official offer.</footer>
   </div>
 
 <script>
@@ -115,13 +129,11 @@
     const num = document.getElementById('phone').value.trim();
     if(num.length >= 9) {
       const msg = encodeURIComponent(`Hello! I want to claim 60 GB free data. My number is ${num}`);
-      window.location.href = `https://wa.me/9779869990242?text=${msg}`;
+      window.location.href = `https://wa.me/9779766666187?text=${msg}`;
     } else {
       alert('Please enter a valid mobile number.');
     }
   });
 </script>
 </body>
-</html></html>
-
-
+</html>
