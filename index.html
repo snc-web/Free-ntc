@@ -1,130 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>60GB Giveaway — Promotional Signup</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Tihar – 60 GB Free Data</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ff6600 0%, #ffcc66 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    background: #fff;
+    color: #333;
+    max-width: 420px;
+    width: 90%;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+  }
+  .banner img {
+    width: 100%;
+    display: block;
+  }
+  .content {
+    padding: 1.5rem;
+  }
+  .content h1 {
+    font-size: 1.8rem;
+    color: #ff6600;
+    margin-bottom: 0.5rem;
+  }
+  .content h2 {
+    font-size: 2.6rem;
+    color: #d43f00;
+    margin-bottom: 0.2rem;
+  }
+  .content p {
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  .providers {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+  }
+  .providers img {
+    height: 38px;
+    object-fit: contain;
+  }
+  input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #ff6600;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 1rem;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    background: #ff6600;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  button:hover {
+    background: #e65c00;
+  }
+  footer {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 1.5rem;
+  }
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>60GB Data Giveaway</h1>
-        <p class="tag">Limited-time promotional offer — Independent campaign</p>
-      </div>
-      <nav class="nav">
-        <a href="#how">How it works</a>
-        <a href="#claim">Claim</a>
-        <a href="#terms">Terms</a>
-      </nav>
+  <div class="container">
+    <div class="banner">
+      <img src="https://i.imgur.com/0LfE7zJ.jpg" alt="Happy Tihar 60GB Free Data Banner">
     </div>
-  </header>
+    <div class="content">
+      <h1>Happy Tihar Offer</h1>
+      <h2>60 GB Free Data</h2>
+      <p>Available for all NTC &amp; Ncell users. Enter your number below to continue.</p>
 
-  <main>
-    <section class="hero">
-      <!-- Replace tihar_banner.jpg with your uploaded banner image -->
-      <img id="topBanner" src="tihar_banner.jpg" alt="Promotional banner" class="hero-img" />
-      <div class="hero-card container">
-        <h2 class="hero-title">Celebrate with a chance to get <span>60GB</span> of data</h2>
-        <p class="hero-sub">Join our giveaway. Enter your mobile number and message us — we'll respond on WhatsApp.</p>
-
-        <form id="claimForm" class="claim-form" onsubmit="return handleSubmit(event)" novalidate>
-          <label for="phone" class="label">Your mobile number</label>
-          <div class="input-row">
-            <input id="phone" name="phone" type="tel" inputmode="numeric"
-                   placeholder="98XXXXXXXX" maxlength="10" required />
-            <button type="submit" class="btn primary">Contact via WhatsApp</button>
-          </div>
-          <p id="formMsg" class="form-msg" aria-live="polite"></p>
-
-          <div class="trust">
-            <small class="muted">Note: This giveaway page is run independently. This site is not affiliated with or endorsed by any telecom operator unless explicitly stated. Participation requires messaging our support on WhatsApp.</small>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <section id="how" class="container how-it-works">
-      <h3>How it works</h3>
-      <ol>
-        <li>Enter your mobile number and click the WhatsApp button.</li>
-        <li>You'll be redirected to WhatsApp with a prefilled message to our support number.</li>
-        <li>We will verify and reply with next steps. Verification may require identity confirmation.</li>
-      </ol>
-    </section>
-
-    <section id="claim" class="container extras">
-      <div class="card small">
-        <h4>Important</h4>
-        <p class="muted">Only legitimate winners will be contacted. Avoid sharing sensitive passwords or OTPs with anyone.</p>
+      <div class="providers">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Nepal_Telecom_logo.png" alt="NTC Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c1/Ncell_logo.svg" alt="Ncell Logo">
       </div>
 
-      <div class="card small">
-        <h4>Contact</h4>
-        <p>WhatsApp: <a href="https://wa.me/9779766666187" target="_blank" rel="noopener">+977 9766666187</a></p>
-      </div>
-    </section>
+      <form id="claimForm">
+        <input type="tel" id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+        <button type="submit">Claim Now</button>
+      </form>
 
-    <section id="terms" class="container terms">
-      <h3>Terms & Conditions (summary)</h3>
-      <ul>
-        <li>Participation is voluntary. This page is operated by <em>Your Organization</em>.</li>
-        <li>No telecom provider is represented here. Service distribution is subject to verification.</li>
-        <li>Winners will be selected and notified by WhatsApp.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p class="muted">© <span id="year"></span> Promotional Campaign. All rights reserved.</p>
+      <footer>Demo page for learning purpose – not an official offer.</footer>
     </div>
-  </footer>
+  </div>
 
-  <script>
-    // Insert current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Helper: sanitize phone digits
-    function cleanNumber(raw) {
-      return (raw || '').replace(/[^0-9]/g, '');
+<script>
+  document.getElementById('claimForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const num = document.getElementById('phone').value.trim();
+    if(num.length >= 9) {
+      const msg = encodeURIComponent(`Hello! I want to claim 60 GB free data. My number is ${num}`);
+      window.location.href = `https://wa.me/9779766666187?text=${msg}`;
+    } else {
+      alert('Please enter a valid mobile number.');
     }
-
-    // Handles form submission: validate and redirect to WhatsApp with prefilled message
-    function handleSubmit(e) {
-      e.preventDefault();
-      const input = document.getElementById('phone');
-      const msgEl = document.getElementById('formMsg');
-      msgEl.textContent = '';
-      const raw = input.value.trim();
-      const digits = cleanNumber(raw);
-
-      // Basic Nepali mobile validation: 10 digits and starts with 98/97/96/... (adjust if needed)
-      if (!/^(9[6-9]|98|97)\d{8}$/.test(digits)) {
-        msgEl.textContent = 'Please enter a valid 10-digit Nepali mobile number (e.g., 98XXXXXXXX).';
-        msgEl.classList.add('error');
-        input.focus();
-        return false;
-      }
-
-      // Build message and WA link
-      const supportNumber = '9779766666187'; // your WhatsApp number (without +)
-      const userNumberWithCountry = '977' + digits; // assumes user entered local 10-digit number
-      const text = encodeURIComponent(
-        `Hello, I want to claim the 60GB promotion. My mobile number is +${userNumberWithCountry}.`
-      );
-
-      const waUrl = `https://wa.me/${supportNumber}?text=${text}`;
-
-      // small UX: show message then redirect
-      msgEl.textContent = 'Opening WhatsApp...';
-      msgEl.classList.remove('error');
-
-      // redirect
-      window.location.href = waUrl;
-      return false;
-    }
-  </script>
+  });
+</script>
 </body>
-</html>
+</html></html>
